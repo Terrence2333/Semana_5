@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Interactiva Animada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="gallery-container">
+        <h1>Galería Animada Interactiva</h1>
+
+        <div class="controls">
+            <input type="url" id="image-url" placeholder="Pega la URL de una imagen o GIF aquí..." required>
+            <button id="add-btn">Agregar Imagen</button>
+            <button id="delete-btn" class="btn-danger">Eliminar Seleccionada</button>
+        </div>
+
+        <div class="main-view">
+            <img id="featured" src="https://picsum.photos/800/500" alt="Vista principal">
+        </div>
+
+        <div id="gallery" class="thumbnails">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.gallery-container {
+    max-width: 900px;
+    width: 100%;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Controles */
+.controls {
+    margin-bottom: 25px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+input[type="url"] {
+    padding: 10px;
+    width: 60%;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="url"]:focus { border-color: #007bff; }
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-danger { background-color: #dc3545; }
+button:hover { opacity: 0.8; transform: translateY(-2px); }
+
+/* Imagen Principal */
+.main-view img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover; /* Ajuste perfecto al contenedor */
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Galería y Miniaturas */
+.thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    min-height: 120px;
+    padding: 10px;
+    border-top: 1px solid #eee;
+}
+
+.thumbnail {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease, float 3s ease-in-out infinite; /* Movimiento constante */
+}
+
+/* Parámetro: Resaltar la seleccionada */
+.thumbnail.selected {
+    border: 5px solid #007bff;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+    transform: scale(1.1);
+    animation: none; /* Se detiene al seleccionar */
+    opacity: 1;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
